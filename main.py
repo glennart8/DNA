@@ -1,7 +1,7 @@
-import re
+import matplotlib.pyplot as plt
 
 # Läs in fil
-text_path = "dna_raw.txt"
+text_path = "dna_raw_complicated.txt"
 with open(text_path, "r") as file:
     raw_text = file.read()
 
@@ -43,4 +43,16 @@ for key, value in result.items():
     print(f" Sequence: {key}\n DNA counts: {value}")
     print()
 
+
 # Visa diagram över frekvensen av bokstäver
+
+def plot_dna_frequency(dna_dictionary):
+    for key, value in dna_dictionary.items():
+        plt.figure(figsize=(5, 5)) # anger storleken
+        plt.bar(value.keys(), value.values()) # skapar ett stapeldiagram med keys och values
+        plt.title(f"DNA Frequency for {key}") # sätter titel
+        plt.xlabel("DNA-letters") # sätter labels på x-axeln
+        plt.ylabel("Amount") # sätter labels på y-axeln
+        plt.show() # visar diagrammen
+
+plot_dna_frequency(result)
