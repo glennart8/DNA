@@ -34,7 +34,7 @@ def count_dna(raw_text):
             "g": value.count("g"),
         }
 
-        # Felsökning: skriv ut räkningen
+        # Felsökning, skriver ut räkningen
         print(f"DEBUG - DNA counts for {key}: {dna_counting}")
         print()
 
